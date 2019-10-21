@@ -79,11 +79,16 @@
         <div class="box-body">
             <?php if($existe_m==true){?>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
+                    <div class="col-md-3 col-sm-3 col-xs-3" style="padding-right:0px;">
+                        <div class="form-group" style="padding-right:0px;">
                             <button type="button" class="btn btn-success" id="carga_fuente" style="float:left;">
                                 <i class="glyphicon glyphicon-download-alt"></i> Actualizar Audios
                             </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2" id="carga" style="display:none;">
+                        <div class="form-group" style="float:left;">
+                            <img src="./vista/img/loading.gif" width="30px"/>
                         </div>
                     </div>
                 </div>
@@ -284,6 +289,7 @@
 
   $("#carga_fuente").click(function(){
     var proy = $("#proyecto").val();
+    $("#carga").css("display","block");
 
     $.ajax({
         type: "post",
@@ -292,6 +298,7 @@
             proy: proy
         },
         success: function(datos) {
+            $("#carga").css("display","none");
             if(datos=='1'){
                 $('#my-table').DataTable().ajax.reload();
                 swal("¡Operación exitosa! Se actualizó la base de audios.", { icon: "success", });

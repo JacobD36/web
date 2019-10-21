@@ -53,22 +53,25 @@
                         if (!is_dir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/")) {
                             mkdir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/", 0777);
                             $ruta="../phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
+                            $ruta_x="/web/phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
                         }
                     } else {
                         if (!is_dir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/")) {
                             mkdir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/", 0777);
                             $ruta="../phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
+                            $ruta_x="/web/phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
                         } else {
                             $ruta="../phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
+                            $ruta_x="/web/phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
                         }
                     }
 
                     if (!file_exists($ruta.$file)) {
                         if ($file && move_uploaded_file($_FILES['archivo']['tmp_name'], $ruta.$file)) {
                             if ($docs[0]['docs']==0) {
-                                $carga->set_file($proyecto, $cat_carga, $fecha_carga, $titulo, $alias, $ruta.$file, $ruta.$file, $subcat_carga, 1, $id_usuario, $descripcion);
+                                $carga->set_file($proyecto, $cat_carga, $fecha_carga, $titulo, $alias, $ruta_x.$file, $ruta_x.$file, $subcat_carga, 1, $id_usuario, $descripcion);
                             } else {
-                                $carga->set_file($proyecto, $cat_carga, $fecha_carga, $titulo, $alias, $ruta.$file, '', $subcat_carga, 0, $id_usuario, $descripcion);
+                                $carga->set_file($proyecto, $cat_carga, $fecha_carga, $titulo, $alias, $ruta_x.$file, '', $subcat_carga, 0, $id_usuario, $descripcion);
                             }
                             echo "Exito";
                         }

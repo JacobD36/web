@@ -247,10 +247,11 @@ class app_model{
                         $fecha=$rs2['Fecha'];
                         $pedido=$rs2['tRegistro'];
                         if($pedido != "" && $pedido != "0"){
-                            //$nombre_fichero = "/home/audios_bayental/".$rs['ruta']."/".$fecha."/".$audio;
-                            $nombre_fichero = "/phocadownload/bayental_audios/".$rs['ruta']."/".$fecha."/".$audio;
-                            if(file_exists($nombre_fichero)) {
-                                $stmt3 = $db1->prepare("update bdrimac_onco.tb_audios_ventas set lEstado=1 where tRegistro = ".$pedido);
+                            $nombre_fichero_x = "/home/audios_bayental/".$rs['ruta']."/".$fecha."/".$audio;
+                            $nombre_fichero = "/web/phocadownload/bayental_audios/".$rs['ruta']."/".$fecha."/".$audio;
+                            //$nombre_fichero_x = "../phocadownload/bayental_audios/".$rs['ruta']."/".$fecha."/".$audio;
+                            if(file_exists($nombre_fichero_x)) {
+                                $stmt3 = $db1->prepare("update ".$rs['base'].".tb_audios_ventas set lEstado=1 where tRegistro = ".$pedido);
                                 $stmt3->execute();
                                 unset($stmt3);
                                 $stmt4 = $this->db->prepare("insert into bayental_app.audios (id_campana,id_menu,fecha_audio,title,alias,filename,filename_play,estado,id_submenu,audio,id_usuario) values (
