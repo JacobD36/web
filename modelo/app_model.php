@@ -247,7 +247,8 @@ class app_model{
                         $fecha=$rs2['Fecha'];
                         $pedido=$rs2['tRegistro'];
                         if($pedido != "" && $pedido != "0"){
-                            $nombre_fichero = "/home/audios_bayental/".$rs['ruta']."/".$fecha."/".$audio;
+                            //$nombre_fichero = "/home/audios_bayental/".$rs['ruta']."/".$fecha."/".$audio;
+                            $nombre_fichero = "/phocadownload/bayental_audios/".$rs['ruta']."/".$fecha."/".$audio;
                             if(file_exists($nombre_fichero)) {
                                 $stmt3 = $db1->prepare("update bdrimac_onco.tb_audios_ventas set lEstado=1 where tRegistro = ".$pedido);
                                 $stmt3->execute();

@@ -48,38 +48,18 @@
                 if($docs[0]['docs']==0 && $extension!='mp3'){$error_extension=1;}
 
                 if ($error_extension==0) {
-                    if (!is_dir("../phocadownload/".$ruta1."/")) {
-                        mkdir("../phocadownload/".$ruta1."/", 0777);
-                        if (!is_dir("../phocadownload/".$ruta1."/".$cat_carga."/")) {
-                            mkdir("../phocadownload/".$ruta1."/".$cat_carga."/", 0777);
-                            if (!is_dir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/")) {
-                                mkdir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/", 0777);
-                                $ruta="../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/";
-                            }
-                        } else {
-                            if (!is_dir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/")) {
-                                mkdir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/", 0777);
-                                $ruta="../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/";
-                            } else {
-                                $ruta="../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/";
-                            }
+                    if (!is_dir("../phocadownload/userupload/".$ruta1."/")) {
+                        mkdir("../phocadownload/userupload/".$ruta1."/", 0777);
+                        if (!is_dir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/")) {
+                            mkdir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/", 0777);
+                            $ruta="../phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
                         }
                     } else {
-                        if (!is_dir("../phocadownload/".$ruta1."/".$cat_carga."/")) {
-                            mkdir("../phocadownload/".$ruta1."/".$cat_carga."/", 0777);
-                            if (!is_dir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/")) {
-                                mkdir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/", 0777);
-                                $ruta="../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/";
-                            } else {
-                                $ruta="../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/";
-                            }
+                        if (!is_dir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/")) {
+                            mkdir("../phocadownload/userupload/".$ruta1."/".$fecha_upload."/", 0777);
+                            $ruta="../phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
                         } else {
-                            if (!is_dir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/")) {
-                                mkdir("../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/", 0777);
-                                $ruta="../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/";
-                            } else {
-                                $ruta="../phocadownload/".$ruta1."/".$cat_carga."/".$fecha_upload."/";
-                            }
+                            $ruta="../phocadownload/userupload/".$ruta1."/".$fecha_upload."/";
                         }
                     }
 
