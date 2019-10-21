@@ -230,6 +230,10 @@ class app_model{
                         $db1 = database::conexion_251();
                         break;
                     }
+                    case 'conexion':{
+                        $db1 = database::conexion();
+                        break;
+                    }
                 }
                 $stmt1 = $db1->prepare("SELECT date(fFecha) as Fecha,replace(date(fFecha),'-','') as fecha1,right(concat('00',month(fFecha)),2) as mes,right(concat('00',day(fFecha)),2) as dia,year(fFecha) as ano FROM ".$rs['base'].".tb_audios_ventas where lEstado = 0 group by date(ffecha) order by fFecha;");
                 $stmt1->execute();
