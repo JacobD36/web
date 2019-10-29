@@ -90,7 +90,8 @@
                         }
                     }
                     
-                    if ($rs['filename_play']!='') {
+                    //if ($rs['filename_play']!='') {
+                    if ($extension=='mp3') {
                         //$ruta = "./phocadownload/".$rs['filename_play'];
                         $ruta = $rs['filename_play'];
                         $btn_download = "<audio style='height:20px;width:100%;' src='".$ruta."' preload='none' controls>";

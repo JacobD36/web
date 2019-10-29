@@ -1,7 +1,12 @@
 <?php
     $nombre= $_GET['nombre'];
-    //$enlace ='../phocadownload/'.$nombre;
-    $enlace = $nombre;
+    $nombre1 = explode("/",$nombre);
+    $nombre2 = "..";
+    for($i=2;$i<=(count($nombre1)-1);$i++){
+		$nombre2.="/".$nombre1[$i];
+	}
+    //$enlace ='../phocadownload/userupload/'.$nombre1;
+    $enlace = $nombre2;
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
     header('Content-Disposition: attachment; filename="'.basename($enlace).'"');

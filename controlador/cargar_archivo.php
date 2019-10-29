@@ -44,8 +44,8 @@
             if ($file!='') {
                 $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
                 $alias = pathinfo($file,  PATHINFO_FILENAME);
-                if($docs[0]['docs']==1 && $extension=='mp3'){$error_extension=1;}
-                if($docs[0]['docs']==0 && $extension!='mp3'){$error_extension=1;}
+                //if($docs[0]['docs']==1 && $extension=='mp3'){$error_extension=1;}
+                //if($docs[0]['docs']==0 && $extension!='mp3'){$error_extension=1;}
 
                 if ($error_extension==0) {
                     if (!is_dir("../phocadownload/userupload/".$ruta1."/")) {

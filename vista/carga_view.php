@@ -15,6 +15,11 @@
     $categorias = $modulo->get_categorias($proyecto);
     $existe_m = $modulo->existe_migra($proyecto);
 ?>
+<style>
+    .glyphicon-folder-open{
+        display: unset !important;
+    }
+</style>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>CARGA DE ARCHIVOS</h1>
