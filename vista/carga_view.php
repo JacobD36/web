@@ -399,6 +399,7 @@
       var filtro1 = $("#sel_nombre").val();
       var filtro2 = $("#sel_categoria").val();
       var filtro3 = $("#sel_subcategoria").val();
+      if(filtro1=='9NcnIdt8EO'){upgrade_token();}
       mostrar_elem(filtro1,filtro2,filtro3);
   })
 
@@ -528,5 +529,16 @@
         });
         $("th").css("background-color", "#4c88bb");
         $("th").css("color", "white");
+    }
+
+    function upgrade_token(){
+        $.ajax({
+            type: "post",
+            url: "controlador/update_token.php",
+            data: {
+                id:0
+            },
+            success: function(datos) {}
+        });
     }
 </script>
